@@ -14,9 +14,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "gulp-sourcemaps": "^1.5.1",
-    "tap-spec": "^2.2.2",
-    "tape": "^3.5.0"
+    "gulp-sourcemaps": "^1.5.2",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.0"
   },
   "homepage": "https://github.com/ben-eb/gulp-cssnano",
   "author": {
@@ -27,8 +27,8 @@
   "repository": "ben-eb/gulp-cssnano",
   "dependencies": {
     "cssnano": "^2.0.0",
-    "gulp-util": "^3.0.1",
-    "object-assign": "^2.0.0",
+    "gulp-util": "^3.0.6",
+    "object-assign": "^3.0.0",
     "vinyl-sourcemaps-apply": "^0.1.4"
   }
 }
