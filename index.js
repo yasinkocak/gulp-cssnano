@@ -21,7 +21,7 @@ module.exports = function(options) {
             return cb(new PluginError(PLUGIN_NAME, error));
         } else if (file.isBuffer()) {
             try {
-                var result = nano(String(file.contents), assign(options, {
+                var result = nano.process(String(file.contents), assign(options, {
                     map: (file.sourceMap) ? {annotation: false} : false,
                     from: file.relative,
                     to: file.relative

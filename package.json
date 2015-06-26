@@ -26,7 +26,7 @@
   },
   "repository": "ben-eb/gulp-cssnano",
   "dependencies": {
-    "cssnano": "^1.0.0",
+    "cssnano": "^2.0.0",
     "gulp-util": "^3.0.1",
     "object-assign": "^2.0.0",
     "vinyl-sourcemaps-apply": "^0.1.4"
