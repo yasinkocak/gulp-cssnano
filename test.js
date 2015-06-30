@@ -55,6 +55,25 @@ test('should minify css, with sourcemaps', function (t) {
     init.end();
 });
 
+test('should minify css, discarding sourcemaps', function (t) {
+    t.plan(1);
+
+    var init = sourcemaps.init();
+    var write = sourcemaps.write();
+    var minify = nano();
+
+    init.pipe(write).pipe(minify);
+
+    minify.on('data', function (data) {
+        t.equal(String(data.contents), expected);
+    });
+
+    var file = fixture(new Buffer(css));
+
+    init.write(file);
+    init.end();
+});
+
 test('should throw an error in stream mode', function (t) {
     t.plan(1);
 
