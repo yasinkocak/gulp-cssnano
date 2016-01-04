@@ -28,7 +28,7 @@
   "dependencies": {
     "cssnano": "^3.0.0",
     "gulp-util": "^3.0.6",
-    "object-assign": "^3.0.0",
-    "vinyl-sourcemaps-apply": "^0.1.4"
+    "object-assign": "^4.0.1",
+    "vinyl-sourcemaps-apply": "^0.2.1"
   }
 }
