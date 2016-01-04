@@ -14,11 +14,11 @@ npm install gulp-cssnano --save-dev
 
 ```js
 var gulp = require('gulp');
-var nano = require('gulp-cssnano');
+var cssnano = require('gulp-cssnano');
 
 gulp.task('default', function() {
     return gulp.src('./main.css')
-        .pipe(nano())
+        .pipe(cssnano())
         .pipe(gulp.dest('./out'));
 });
 ```
@@ -29,13 +29,13 @@ gulp-cssnano supports [gulp-sourcemaps]:
 
 ```js
 var gulp = require('gulp');
-var nano = require('gulp-cssnano');
+var cssnano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('default', function () {
     return gulp.src('main.css')
         .pipe(sourcemaps.init())
-        .pipe(nano())
+        .pipe(cssnano())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./out'));
 });
