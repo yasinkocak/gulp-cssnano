@@ -31,7 +31,19 @@ module.exports = function (opts) {
                 file.contents = new Buffer(result.css);
                 this.push(file);
                 cb();
-            }.bind(this));
+            }.bind(this),
+            function (error) {
+                  var errorOptions = {fileName: file.path};
+                  if (error.name === 'CssSyntaxError') {
+                     error = error.message + error.showSourceCode();
+                     errorOptions.showStack = false;
+                  }
+                 // Prevent stream’s unhandled exception from
+                 // being suppressed by Promise
+                 setImmediate(function () {
+                     cb(new PluginError(PLUGIN_NAME, error));
+                 });
+            });
         }
     };
 
