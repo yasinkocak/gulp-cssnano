@@ -103,3 +103,23 @@ test('should let null files pass through', function (t) {
 
     stream.write(file);
 });
+
+test('should show css errors', function (t) {
+    t.plan(2);
+
+    var stream = nano();
+
+    var file = fixture(new Buffer('h1\n{{\n    color: white\n}\n'));
+
+    stream.on('error', function (error) {
+        t.pass('caused error message');
+        t.ok(error);
+    });
+
+    stream.on('data', function (data) {
+        t.fail('should not have completed');
+        t.notOk(data);
+    });
+
+    stream.write(file);
+});
